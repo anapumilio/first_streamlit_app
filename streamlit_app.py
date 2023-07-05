@@ -40,7 +40,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
 
-my_data_row = my_cut.fetchone()
+my_data_row = my_cur.fetchone()
 streamlit.header("The fruit load list contains")
 streamlit.dataframe(my_data_row)
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
